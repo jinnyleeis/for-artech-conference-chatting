@@ -54,9 +54,9 @@ function send() {
   var chat = document.getElementById('chat')
   var content = document.createElement('div')
   var node = document.createTextNode(message)
-  content.classList.add('me')
+  //content.classList.add('me')
   content.appendChild(node)
-  chat.appendChild(content)
+  //chat.appendChild(content)
 
   // 서버로 message 이벤트 전달 + 데이터와 함께
   socket.emit('message', {type: 'message', message: message})
