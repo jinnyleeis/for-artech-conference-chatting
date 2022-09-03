@@ -1,7 +1,8 @@
 @font-face {
   font-family: 'SF_HambakSnow';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
-  font-weight: normal;
+  /*font-weight: normal; */
+  font-weight: 1000;
   font-style: normal;
 }
 
@@ -9,10 +10,57 @@
 font-family: 'SF_HambakSnow';
 }
 
+/* 메인 */
 #main {
   margin: auto;
   margin-top: 0px;
-  background-color: lightblue;
+  border-radius: 0px;
+  background-color: #FF5E5A;
   text-align: center;
-  width: 1200px;
+  width: 800px;
+  height: 1000px;
 }
+
+/* 채팅 영역 */
+#chat {
+  height: 90%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+/* 접속 알림 */
+.connect {
+  width: 90%;
+  margin: auto;
+  background-color: #7BBDFF;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* 접속 종료 알림 */
+.disconnect {
+  width: 90%;
+  margin: auto;
+  background-color: #7BBDFF;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* 내가 보낸 메시지 */
+.me {
+  width: 90%;
+  margin: auto;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+/* 상대방이 보낸 메시지 */
+.other {
+  width: 90%;
+  margin: auto;
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+

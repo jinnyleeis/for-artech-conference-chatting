@@ -33,12 +33,30 @@ fs.readFile('./static/index.html', function(err, data) {
  io.sockets.on("connection",function(socket){
     console.log("user connected to server")
 
-  socket.on("send",function(data){console.log("message from user: ",data.content)})
-  socket.on("disconnect",function(){console.log("user disconnected")})
+    socket.on('newusernotify', function(name) {
+        console.log(name + ' entered!')
+    
+        //socket에 뉴유저 이름 저장.
+        socket.name = name
+    
+       //모든 소켓들에게 전송!!
+        io.sockets.emit('update', {type: 'connect', name: 'SERVER', message: name + 'entered!!!.'})
+      })
+    
+
+  socket.on("message",function(data){
+    data.name = socket.name//해당데이터 보낸사람은 소켓에서 알 수 있으니까, 이를 저장.
+    console.log(data)
+    socket.broadcast.emit('update', data)//보낸사람 제외 나머지 유저에게 메시지 전송/
+   })
+  socket.on("disconnect",function(){console.log(socket.name+"disconnected")
+  socket.broadcast.emit('update', {type: 'disconnect', name: 'SERVER', message: socket.name + 'exit.'});
+  //나간사람제외 메시지 전송.
+})
   })
 
 server.listen(8080, function(){
-    console.log('server is now running!, listner 실행.')});
+    console.log('hi server now runnig.., listner 실행.')});
 
 
 
