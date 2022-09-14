@@ -11,6 +11,9 @@
   "description": "",
   "dependencies": {
     "express": "^4.18.1",
-    "socket.io": "^4.5.1"
+    "js-coroutines": "^2.4.36",
+    "react-text-animations": "^1.1.10",
+    "socket.io": "^4.5.1",
+    "text-animation": "^1.2.10"
   }
 }

@@ -56,6 +56,12 @@ fs.readFile('./static/index.html', function(err, data) {
 })
   })
 
+
+  
+  
+  
+
+
 server.listen(8080, function(){
     console.log('hi server now runnig.., listner 실행.')});
 

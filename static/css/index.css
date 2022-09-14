@@ -27,6 +27,7 @@ font-family: 'SF_HambakSnow';
   height: 90%;
   width: 100%;
   overflow-y: auto;
+  
 }
 
 /* 접속 알림 */
@@ -35,7 +36,10 @@ font-family: 'SF_HambakSnow';
   margin: auto;
   background-color: #7BBDFF;
   text-align: center;
+  position: none;
   margin-top: 30px;
+  animation: fadeOut 15s forwards ;/*linear infinite;*/
+  animation: move 15s   forwards ;/*ease-in-out;/*infinite*/
 }
 
 /* 접속 종료 알림 */
@@ -45,6 +49,8 @@ font-family: 'SF_HambakSnow';
   background-color: #7BBDFF;
   text-align: center;
   margin-top: 10px;
+  animation: fadeOut 15s forwards ;/*linear infinite;*/
+  animation: move 15s   forwards ;/*ease-in-out;/*infinite*/
 }
 
 /* 내가 보낸 메시지 
@@ -63,5 +69,73 @@ font-family: 'SF_HambakSnow';
   background-color: white;
   border-radius: 15px;
   margin-top: 10px;
+  animation: fadeOut 15s forwards ;/*linear infinite;*/
+  animation: move 15s   forwards ;/*ease-in-out;/*infinite*/
 }
+
+
+.fade-in {
+
+  animation: fadeIn 2s;
+/* animation will connect up to the keyframe *- 키프레임과의 연결*/
+}
+
+.fade-out {
+
+  animation: fadeOut 2s infinite alternate;
+/* animation will connect up to the keyframe *- 키프레임과의 연결*/
+}
+
+.mover {
+  width: 50px;
+  height: 50px;
+  background: #f06d06;
+  border-radius: 50%;
+  animation: move 5s /*infinite ease-in-out;*/
+}
+
+
+@keyframes fadeIn {
+/* identifier */
+
+from {
+
+  opacity: 0;
+}
+
+to{
+
+  opacity: 1;
+}
+
+}
+
+@keyframes fadeOut {
+  /* identifier */
+  
+  from {
+  
+    opacity: 1;
+  }
+  
+  to{
+  
+    opacity: 0;
+  }
+  
+  }
+
+  @keyframes move {
+    20%, 100% {
+      opacity: 0;
+      transform: translate(200px,0px);
+    }
+   /* 0% {
+      opacity: 0;
+    }
+     10% {
+      opacity: 1;
+    }*/
+  }
+  
 
