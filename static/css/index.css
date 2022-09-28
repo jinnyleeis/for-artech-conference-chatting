@@ -25,7 +25,7 @@ font-family: 'SF_HambakSnow';
 /* 채팅 영역 */
 #chat {
   height: 90%;
-  width: 100%;
+  width: 50%;
   overflow-y: auto;
   
 }
@@ -36,10 +36,10 @@ font-family: 'SF_HambakSnow';
   margin: auto;
   background-color: #7BBDFF;
   text-align: center;
-  position: none;
+ 
   margin-top: 30px;
   animation: fadeOut 15s forwards ;/*linear infinite;*/
-  animation: move 15s   forwards ;/*ease-in-out;/*infinite*/
+  /*animation: move 15s   forwards ;/*ease-in-out;/*infinite*/
 }
 
 /* 접속 종료 알림 */
@@ -50,7 +50,7 @@ font-family: 'SF_HambakSnow';
   text-align: center;
   margin-top: 10px;
   animation: fadeOut 15s forwards ;/*linear infinite;*/
-  animation: move 15s   forwards ;/*ease-in-out;/*infinite*/
+  /*animation: move 15s   forwards ;ease-in-out;/*infinite*/
 }
 
 /* 내가 보낸 메시지 
@@ -69,8 +69,8 @@ font-family: 'SF_HambakSnow';
   background-color: white;
   border-radius: 15px;
   margin-top: 10px;
-  animation: fadeOut 15s forwards ;/*linear infinite;*/
-  animation: move 15s   forwards ;/*ease-in-out;/*infinite*/
+  animation: fadeOut 60s forwards ;/*linear infinite;*/
+  /*animation: move 60s   forwards ;/*ease-in-out;/*infinite*/
 }
 
 
