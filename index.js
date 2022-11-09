@@ -1,18 +1,29 @@
 const express = require('express');//서버
 const http = require('http');//서버
+const port=27017
 const socket = require('socket.io');//실시간 서버-클라이언트 채팅
 //8번째 커밋에서 모듈 추가
 const fs =require("fs");//파일관련 처리하는 node.js 기본제공 모듈 ex)readFile
 
+const express1= express();//express 객체-앱성.
 
-const express1= express();//express 객체
 
 const server = http.createServer(express1);//express로부터 server 생성
-const io = socket(server)
+const io = socket(server);
+
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb+srv://jiinlee:<sogangjiin>@cluster0.07pl3rb.mongodb.net/?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology:true}).then(()=>console.log("mongodb connected"))
+.catch(err=>console.log(err));
+//각각의 기능들에 대해  tf여부 쓰는 것 -> 잔에러 방지 -> 정확히 안와닿아~~~
 //8번째 커밋
 //for middleware <use메소드> 클라이언트가, 서버로 엑세스할 때,생성한 css파일로 엑세스 할 수 있도록 엑세스 허용 코드
 express1.use('/css', express.static('./static/css'))
 express1.use('/js', express.static('./static/js'))
+
+//몽고
+//mongodb+srv: //jiinlee:<jiinsognag1234>@cluster0.07pl3rb.mongodb.net/?retryWrites=true&w=majority
+
 
 //8번째 커밋 
 //html파일내용, 클라이언트에게 내용 전달해야. - get 함수 코드 수정.
@@ -62,8 +73,9 @@ fs.readFile('./static/index.html', function(err, data) {
   
 
 
-server.listen(8080, function(){
+server.listen(port, function(){
     console.log('hi server now runnig.., listner 실행.')});
 
 
 
+    
